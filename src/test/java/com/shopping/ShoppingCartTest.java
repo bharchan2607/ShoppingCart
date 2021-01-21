@@ -1,5 +1,6 @@
 package com.shopping;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -8,17 +9,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ShoppingCartTest {
-
+    Shopper shopper;
+    @BeforeEach
+    public void setUp(){
+        shopper = new Shopper(new ShoppingCart());
+    }
     @Test
     public void empty_new_cart(){
         //SEAT
-        Shopper shopper = new Shopper(new ShoppingCart());
         assertTrue(shopper.getCart().isEmpty());
     }
 
     @Test
     public void addItemToEmptyCart(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         assertTrue(shopper.getCart().isEmpty());
         Item actualItem = new Item("Soap", 4.99, 1);
 
@@ -28,7 +31,6 @@ public class ShoppingCartTest {
 
     @Test
     public void addItemToCart_returnsSubtotal(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         Item item1 = new Item("Samsung", 1100.00, 1);
         Item item2 = new Item("Rolex Watch", 11000.00, 1);
         Item item3 = new Item("Soap", 4.99, 1);
@@ -42,7 +44,6 @@ public class ShoppingCartTest {
 
     @Test
     public void checkQuantityInCart(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         Item item1 = new Item("Soap", 4.99, 2);
 
         shopper.getCart().addItemToCart(item1);
@@ -52,7 +53,6 @@ public class ShoppingCartTest {
 
     @Test
     public void getItemsFromCart(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         assertTrue(shopper.getCart().isEmpty());
         Item actualItem = new Item("Soap", 4.99, 1);
         shopper.getCart().addItemToCart(actualItem);
@@ -63,7 +63,6 @@ public class ShoppingCartTest {
 
     @Test
     public void highlightItemsThatAreOnSale(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         Item item1 = new Item("Soap", 4.99, 1);
         Item item2 = new Item("Samsung", 1100.00, 1);
         Item item3 = new Item("Rolex Watch", 11000.00, 1);
@@ -81,7 +80,6 @@ public class ShoppingCartTest {
 
     @Test
     public void removeAnItemFromCart(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         Item item1 = new Item("Soap", 4.99, 1);
         Item item2 = new Item("Samsung", 1100.00, 1);
         Item item3 = new Item("Rolex Watch", 11000.00, 1);
@@ -98,7 +96,6 @@ public class ShoppingCartTest {
 
     @Test
     public void updateQuantity_afterRemoveAnItem(){
-        Shopper shopper = new Shopper(new ShoppingCart());
         Item item1 = new Item("Soap", 4.99, 3);
         shopper.getCart().addItemToCart(item1);
 

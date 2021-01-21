@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.shopping.ShoppingCartTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-01-21T20:58:30" hostname="LAPTOP-S57OD5Q8" time="0.074">
+<testsuite name="com.shopping.ShoppingCartTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-01-21T21:44:50" hostname="LAPTOP-S57OD5Q8" time="0.125">
   <properties/>
-  <testcase name="highlightItemsThatAreOnSale()" classname="com.shopping.ShoppingCartTest" time="0.053"/>
+  <testcase name="highlightItemsThatAreOnSale()" classname="com.shopping.ShoppingCartTest" time="0.069"/>
   <testcase name="addItemToCart_returnsSubtotal()" classname="com.shopping.ShoppingCartTest" time="0.003"/>
-  <testcase name="updateQuantity_afterRemoveAnItem()" classname="com.shopping.ShoppingCartTest" time="0.001"/>
-  <testcase name="removeAnItemFromCart()" classname="com.shopping.ShoppingCartTest" time="0.001"/>
+  <testcase name="updateQuantity_afterRemoveAnItem()" classname="com.shopping.ShoppingCartTest" time="0.016"/>
+  <testcase name="removeAnItemFromCart()" classname="com.shopping.ShoppingCartTest" time="0.003"/>
   <testcase name="getItemsFromCart()" classname="com.shopping.ShoppingCartTest" time="0.003"/>
-  <testcase name="empty_new_cart()" classname="com.shopping.ShoppingCartTest" time="0.002"/>
-  <testcase name="addItemToEmptyCart()" classname="com.shopping.ShoppingCartTest" time="0.001"/>
-  <testcase name="checkQuantityInCart()" classname="com.shopping.ShoppingCartTest" time="0.003"/>
+  <testcase name="empty_new_cart()" classname="com.shopping.ShoppingCartTest" time="0.001"/>
+  <testcase name="addItemToEmptyCart()" classname="com.shopping.ShoppingCartTest" time="0.007"/>
+  <testcase name="checkQuantityInCart()" classname="com.shopping.ShoppingCartTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,17 +1,21 @@
 package com.shopping;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ShoppingCart {
-    private List<Item> items = new ArrayList<Item>();
+    private List<Item> items;
+
+    public ShoppingCart(){
+        items = new ArrayList<Item>();
+    }
     public boolean isEmpty() {
         return items.isEmpty();
     }
 
     public void addItemToCart(Item item) {
+
        for(Item currentItem: items){
            if(currentItem.getItemName().equals(item.getItemName())){
                currentItem.setQuantity(currentItem.getQuantity()+item.getQuantity());
@@ -30,12 +34,11 @@ public class ShoppingCart {
     }
 
     public int getQuantityOfanItem(String itemName) {
-        for(Item currentItem: items){
-            if(currentItem.getItemName().equals(itemName)){
-                return currentItem.getQuantity();
-            }
-        }
-        return 0;
+       return items.stream()
+                .filter(item -> item.getItemName().equals(itemName))
+                .mapToInt(item -> item.getQuantity())
+               .findFirst()
+               .getAsInt();
     }
 
     public List<Item> getItems() {
@@ -43,12 +46,10 @@ public class ShoppingCart {
     }
 
     public Item highlightItemsOnSale() {
-        for(Item item: items){
-            if("RED".equals(item.getIsOnSaleColor())) {
-                return item;
-            }
-        }
-        return null;
+       return items.stream()
+                .filter(item -> "RED".equals(item.getIsOnSaleColor()))
+                .findFirst()
+                .get();
     }
 
     public void removeItemFromCart(Item item) {
